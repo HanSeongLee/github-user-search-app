@@ -49,7 +49,7 @@ export default function Home() {
         <meta name="twitter:image"
               content={process.env.NEXT_PUBLIC_OG_IMAGE}
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
       </Head>
 
       <main>
