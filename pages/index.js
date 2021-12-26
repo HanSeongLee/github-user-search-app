@@ -4,7 +4,6 @@ import SearchInput from "../components/SearchInput";
 import GitHubProfile from "../components/GitHubProfile";
 import Header from "../components/Header";
 import {useCallback, useState} from "react";
-import {useTheme} from "next-themes";
 import data from '../data/data.json';
 
 const fetcher = (url) => fetch(url).then((res) => res.json());
@@ -12,7 +11,6 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 export default function Home() {
   const [profile, setProfile] = useState(data);
   const [error, setError] = useState(false);
-  const {theme} = useTheme();
 
   const onSubmit = useCallback(async (search) => {
     const data = await fetcher(`https://api.github.com/users/${search}`);
