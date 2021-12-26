@@ -25,14 +25,15 @@ const Header = () => {
             </Link>
 
             <button className={cn(styles.darkModeButton, {
-                    [styles.light]: theme === 'dark',
-                })}
+                [styles.dark]: theme === 'light',
+                [styles.light]: theme === 'dark',
+            })}
                     onClick={switchTheme}
             >
                 {theme === 'light' ? 'dark' : 'light'}
                 {theme === 'light' ? (
-                    <DarkIcon />
-                ) : (<LightIcon />)}
+                    <DarkIcon/>
+                ) : (<LightIcon/>)}
             </button>
         </header>
     );

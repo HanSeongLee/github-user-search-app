@@ -9,6 +9,7 @@ $breakpoints: (mobile: 568px, tablet: 768px, desktop: 992px);
   --theme-box-background: #FEFEFE;
   --theme-box-shadow: 0px 16px 30px -10px rgba(70, 96, 187, 0.198567);
   --theme-indicator-box-background: #F6F8FF;
+  --theme-icon-color: #4B6A9B;
 }
 
 .dark {
@@ -18,4 +19,5 @@ $breakpoints: (mobile: 568px, tablet: 768px, desktop: 992px);
   --theme-box-background: #1E2A47;
   --theme-box-shadow: 0;
   --theme-indicator-box-background: #141D2F;
+  --theme-icon-color: #FFFFFF;
 }

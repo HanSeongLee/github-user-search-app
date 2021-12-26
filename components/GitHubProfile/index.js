@@ -31,17 +31,19 @@ const GitHubProfile = ({profile}) => {
                             <h1>
                                 {name}
                             </h1>
-                            <h3>
+                            <div className={'heading3'}>
                                 @{login}
-                            </h3>
+                            </div>
                         </div>
-                        <h4>
+                        <div className={'heading4'}>
                             Joined {moment(created_at)?.format("D MMM YYYY")}
-                        </h4>
+                        </div>
                     </div>
                 </div>
 
-                <p className={styles.description}>
+                <p className={cn(styles.description, {
+                    [styles.empty]: !bio,
+                })}>
                     {bio || 'This profile has no bio'}
                 </p>
 
@@ -50,19 +52,19 @@ const GitHubProfile = ({profile}) => {
                         <div className={styles.indicatorItemText}>
                             Repos
                         </div>
-                        <h1>{public_repos}</h1>
+                        <h2>{public_repos}</h2>
                     </div>
                     <div className={styles.indicatorItem}>
                         <div className={styles.indicatorItemText}>
                             Followers
                         </div>
-                        <h1>{followers}</h1>
+                        <h2>{followers}</h2>
                     </div>
                     <div className={styles.indicatorItem}>
                         <div className={styles.indicatorItemText}>
                             Following
                         </div>
-                        <h1>{following}</h1>
+                        <h2>{following}</h2>
                     </div>
                 </div>
 
@@ -74,9 +76,9 @@ const GitHubProfile = ({profile}) => {
                             <div className={styles.iconWrapper}>
                                 <LocationIcon/>
                             </div>
-                            <h4>
+                            <div className={'heading4'}>
                                 {location || "Not Available"}
-                            </h4>
+                            </div>
                         </div>
                         <div className={cn(styles.infoItem, {
                             [styles.disabled]: !blog,
@@ -87,9 +89,9 @@ const GitHubProfile = ({profile}) => {
                             <a href={blog}
                                target={'_blank'}
                             >
-                                <h4>
+                                <div className={'heading4'}>
                                     {blog || "Not Available"}
-                                </h4>
+                                </div>
                             </a>
                         </div>
                     </div>
@@ -100,9 +102,9 @@ const GitHubProfile = ({profile}) => {
                             <div className={styles.iconWrapper}>
                                 <TwitterIcon/>
                             </div>
-                            <h4>
+                            <div className={'heading4'}>
                                 {twitter_username || "Not Available"}
-                            </h4>
+                            </div>
                         </div>
                         <div className={cn(styles.infoItem, {
                             [styles.disabled]: !company,
@@ -110,9 +112,9 @@ const GitHubProfile = ({profile}) => {
                             <div className={styles.iconWrapper}>
                                 <CompanyIcon/>
                             </div>
-                            <h4>
+                            <div className={'heading4'}>
                                 {company || "Not Available"}
-                            </h4>
+                            </div>
                         </div>
                     </div>
                 </div>

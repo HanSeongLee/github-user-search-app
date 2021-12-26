@@ -73,6 +73,10 @@
       line-height: 25px;
       margin-bottom: 23px;
 
+      &.empty {
+        color: #C7CAD1;
+      }
+
       @include media(">mobile") {
         font-size: 15px;
         line-height: 25px;
@@ -163,6 +167,10 @@
         svg {
           width: auto;
           height: 20px;
+
+          path {
+            fill: var(--theme-icon-color);
+          }
         }
       }
     }

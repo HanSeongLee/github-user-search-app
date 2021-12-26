@@ -23,24 +23,27 @@
     line-height: 19px;
     text-align: right;
     letter-spacing: 2.5px;
-    color: #4B6A9B;
     border: 0;
     background: transparent;
     cursor: pointer;
     outline: none;
 
-    @include media(">desktop") {
-      transition: 0.3s;
+    &.dark {
+      color: #4B6A9B;
 
-      svg path {
+      @include media(">desktop") {
         transition: 0.3s;
-      }
-
-      &:hover {
-        color: #222731;
 
         svg path {
-          fill: #222731;
+          transition: 0.3s;
+        }
+
+        &:hover {
+          color: #222731;
+
+          svg path {
+            fill: #222731;
+          }
         }
       }
     }
