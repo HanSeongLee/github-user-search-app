@@ -8,8 +8,12 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@svgr/webpack": "^6.1.2",
+    "classnames": "^2.3.1",
     "include-media": "^1.4.10",
+    "moment": "^2.29.1",
     "next": "12.0.7",
+    "next-themes": "0.0.15",
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "sass": "^1.45.1"
