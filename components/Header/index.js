@@ -4,11 +4,14 @@ import Link from 'next/link';
 import cn from "classnames";
 import DarkIcon from '../../public/img/icon-moon.svg';
 import LightIcon from '../../public/img/icon-sun.svg';
+import {useTheme} from "next-themes";
 
-const Header = ({theme, onThemeChange}) => {
+const Header = () => {
+    const {theme, setTheme} = useTheme();
+
     const switchTheme = () => {
         const newTheme = theme === 'light' ? 'dark' : 'light';
-        onThemeChange(newTheme);
+        setTheme(newTheme);
     };
 
     return (

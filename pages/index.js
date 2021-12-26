@@ -3,7 +3,7 @@ import styles from './style.module.scss';
 import SearchInput from "../components/SearchInput";
 import GitHubProfile from "../components/GitHubProfile";
 import Header from "../components/Header";
-import {useCallback, useEffect, useState} from "react";
+import {useCallback, useState} from "react";
 import {useTheme} from "next-themes";
 import data from '../data/data.json';
 
@@ -12,16 +12,7 @@ const fetcher = (url) => fetch(url).then((res) => res.json());
 export default function Home() {
   const [profile, setProfile] = useState(data);
   const [error, setError] = useState(false);
-  const {theme, setTheme} = useTheme();
-
-  useEffect(() => {
-    document.querySelector("body").classList.remove(theme === 'light' ? 'dark' : 'light');
-    document.querySelector("body").classList.add(theme);
-  }, [theme]);
-
-  const onThemeChange = useCallback((theme) => {
-    setTheme(theme);
-  }, []);
+  const {theme} = useTheme();
 
   const onSubmit = useCallback(async (search) => {
     const data = await fetcher(`https://api.github.com/users/${search}`);
@@ -85,9 +76,7 @@ export default function Home() {
             <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png"/>
           </Head>
 
-          <Header theme={theme}
-                  onThemeChange={onThemeChange}
-          />
+          <Header />
 
           <main>
             <div className={styles.githubSearchContainer}>
